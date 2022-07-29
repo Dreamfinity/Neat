@@ -44,12 +44,17 @@ repositories {
     maven {
         url 'https://cloudrep.veritaris.me/repos'
     }
+    flatDir {
+        dirs 'libs'
+    }
+    mavenCentral()
 }
 
 dependencies {
-    compile 'com.fasterxml.jackson.core:jackson-core:2.13.0'
-    compile 'com.fasterxml.jackson.core:jackson-annotations:2.13.0'
-    compile 'com.fasterxml.jackson.core:jackson-databind:2.13.0'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.13.3'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.13.3'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.13.3'
+    implementation files('CustomNPC-Plus-1.6-beta2-deobf.jar')
 }
 
 processResources {
@@ -61,6 +66,7 @@ processResources {
         expand "version": project.version,
                 "mcversion": project.minecraft.version
     }
+
     from(sourceSets.main.resources.srcDirs) {
         exclude "mcmod.info"
     }
