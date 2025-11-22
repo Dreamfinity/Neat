@@ -1,5 +1,7 @@
-/.gradle/
-/build/
-/libs/
-/dep*/
-/raw/
+.gradle/
+.idea
+.kotlin
+build/
+dep*/
+raw/
+run/
